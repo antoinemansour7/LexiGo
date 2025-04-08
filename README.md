@@ -21,7 +21,11 @@ LexiGO is a language learning application that helps users improve their vocabul
    git clone <repository-url>
    cd LexiGo
    ```
-2. Install dependencies:
+2. Change directory into the frontend folder:
+   ```bash
+   cd frontend
+   ```
+3. Install dependencies:
    ```bash
    npm install
    ```

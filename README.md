@@ -12,7 +12,8 @@ LexiGO is a language learning application that helps users improve their vocabul
 <img width="1512" alt="Screenshot 2025-04-08 at 10 30 05 AM" src="https://github.com/user-attachments/assets/d01af61f-36c9-4daa-a495-844c53e8ea70" />
 
 - **Practice Mode:** Engage in interactive flashcards to reinforce learning.  
-https://github.com/user-attachments/assets/ad8e5d86-6dd4-488a-9280-457c791cbaca
+
+https://github.com/user-attachments/assets/ad68cb97-4e8a-41b8-94cb-34b696c2f061
 
 - **Flashcards / Quizzes:** Test your knowledge with multiple-choice quizzes.  
 <img width="1512" alt="Screenshot 2025-04-08 at 10 31 11 AM" src="https://github.com/user-attachments/assets/9cad772e-6df4-4476-9099-a01fc5bc22a1" />

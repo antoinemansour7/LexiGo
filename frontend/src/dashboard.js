@@ -25,26 +25,12 @@ function Dashboard() {
   const logoutButtonStyle = {
     background: '#fff',
     color: '#2575fc',
+    border: 'none',
+    borderRadius: '4px',
     padding: '8px 12px',
     cursor: 'pointer',
     fontWeight: 'bold',
     boxShadow: '0 0 8px rgba(0,0,0,0.2)',
-  };
-
-  const progressContainerStyle = {
-    width: '80%',
-    margin: '20px auto 40px',
-    background: '#f0f0f0',
-    borderRadius: '10px',
-    overflow: 'hidden',
-    boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1)',
-  };
-
-  const progressBarStyle = {
-    width: '50%', // example progress value
-    height: '20px',
-    background: 'linear-gradient(to right, #2575fc, #6a11cb)',
-    borderRadius: '10px 0 0 10px',
   };
 
   const gridContainer = {
@@ -52,7 +38,7 @@ function Dashboard() {
     gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
     gap: '20px',
     width: '80%',
-    margin: '0 auto',
+    marginBottom: '60px'
   };
 
   const boxStyle = {
@@ -67,6 +53,36 @@ function Dashboard() {
     fontSize: '1.2em'
   };
 
+  // New progress bar section positioned below the grid
+  const progressWrapperStyle = {
+    width: '80%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  };
+
+  const progressTextStyle = {
+    marginBottom: '10px',
+    fontSize: '1.4em',
+    fontWeight: 'bold',
+    textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+  };
+
+  const progressContainerStyle = {
+    width: '100%',
+    background: '#f0f0f0',
+    borderRadius: '10px',
+    overflow: 'hidden',
+    boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1)',
+  };
+
+  const progressBarStyle = {
+    width: '50%', // example progress value
+    height: '25px',
+    background: 'linear-gradient(to right, #2575fc, #6a11cb)',
+    borderRadius: '10px 0 0 10px',
+  };
+
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
@@ -74,21 +90,26 @@ function Dashboard() {
           Logout
         </button>
       </div>
-      <div style={progressContainerStyle}>
-        <div style={progressBarStyle}></div>
-      </div>
       <div style={gridContainer}>
-        <div style={boxStyle} onClick={() => console.log('My Words! clicked')}>
+        <div style={boxStyle} onClick={() => navigate('/mywords')}>
           My Words!
         </div>
-        <div style={boxStyle} onClick={() => console.log('Practice Mode clicked')}>
+        <div style={boxStyle} onClick={() => navigate('/practicemode')}>
           Practice Mode
         </div>
-        <div style={boxStyle} onClick={() => console.log('Flashcards / Quizzes clicked')}>
+        <div style={boxStyle} onClick={() => navigate('/flashcardsquizzes')}>
           Flashcards / Quizzes
         </div>
-        <div style={boxStyle} onClick={() => console.log('Achievements / Daily Motivation clicked')}>
+        <div style={boxStyle} onClick={() => navigate('/achievements')}>
           Achievements / Daily Motivation
+        </div>
+      </div>
+      <div style={progressWrapperStyle}>
+        <div style={progressTextStyle}>
+          Progress: You're crushing it!
+        </div>
+        <div style={progressContainerStyle}>
+          <div style={progressBarStyle}></div>
         </div>
       </div>
     </div>

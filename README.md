@@ -1,5 +1,10 @@
 # LexiGO
 
+### 🚀 Demo  
+[Watch the video here](https://youtu.be/utkZEQM4TX8)
+
+
+
 LexiGO is a language learning application that helps users improve their vocabulary through interactive features such as flashcards, quizzes, and personalized word lists. The app offers:
 
 - **Login Page:** Secure authentication for user access.  

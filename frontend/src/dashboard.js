@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function Dashboard() {
   const navigate = useNavigate();
 
-  // Inline styles for aesthetics
+  // Container and header styles remain unchanged
   const containerStyle = {
     position: 'relative',
     minHeight: '100vh',
@@ -33,54 +33,39 @@ function Dashboard() {
     boxShadow: '0 0 8px rgba(0,0,0,0.2)',
   };
 
+  // New title style for LexiGO
+  const titleStyle = {
+    fontSize: '3em',
+    fontWeight: 'bold',
+    color: '#fff',
+    textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+    marginBottom: '40px'
+  };
+
   const gridContainer = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '20px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', // increased min width
+    gap: '30px', // increased gap
     width: '80%',
-    marginBottom: '60px'
+    marginBottom: '0'
   };
 
   const boxStyle = {
     background: '#fff',
     color: '#2575fc',
-    padding: '20px',
-    borderRadius: '10px',
+    padding: '30px', // increased padding
+    borderRadius: '15px', // increased border radius
     textAlign: 'center',
-    boxShadow: '0 0 15px rgba(0, 0, 0, 0.2)',
+    boxShadow: '0 0 20px rgba(0, 0, 0, 0.3)', // enhanced box shadow
     cursor: 'pointer',
     fontWeight: 'bold',
-    fontSize: '1.2em'
+    fontSize: '1.5em', // increased font size
+    transition: 'transform 0.3s, box-shadow 0.3s'
   };
 
-  // New progress bar section positioned below the grid
-  const progressWrapperStyle = {
-    width: '80%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  };
-
-  const progressTextStyle = {
-    marginBottom: '10px',
-    fontSize: '1.4em',
-    fontWeight: 'bold',
-    textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
-  };
-
-  const progressContainerStyle = {
-    width: '100%',
-    background: '#f0f0f0',
-    borderRadius: '10px',
-    overflow: 'hidden',
-    boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1)',
-  };
-
-  const progressBarStyle = {
-    width: '50%', // example progress value
-    height: '25px',
-    background: 'linear-gradient(to right, #2575fc, #6a11cb)',
-    borderRadius: '10px 0 0 10px',
+  const boxHoverStyle = {
+    transform: 'scale(1.05)',
+    boxShadow: '0 0 25px rgba(0, 0, 0, 0.4)' // enhanced hover shadow
   };
 
   return (
@@ -90,28 +75,42 @@ function Dashboard() {
           Logout
         </button>
       </div>
+      <div style={titleStyle}>LexiGO</div>
       <div style={gridContainer}>
-        <div style={boxStyle} onClick={() => navigate('/mywords')}>
+        <div
+          style={boxStyle}
+          onClick={() => navigate('/mywords')}
+          onMouseEnter={e => e.currentTarget.style.transform = boxHoverStyle.transform}
+          onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+        >
           My Words!
         </div>
-        <div style={boxStyle} onClick={() => navigate('/practicemode')}>
+        <div
+          style={boxStyle}
+          onClick={() => navigate('/practicemode')}
+          onMouseEnter={e => e.currentTarget.style.transform = boxHoverStyle.transform}
+          onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+        >
           Practice Mode
         </div>
-        <div style={boxStyle} onClick={() => navigate('/flashcardsquizzes')}>
+        <div
+          style={boxStyle}
+          onClick={() => navigate('/flashcardsquizzes')}
+          onMouseEnter={e => e.currentTarget.style.transform = boxHoverStyle.transform}
+          onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+        >
           Flashcards / Quizzes
         </div>
-        <div style={boxStyle} onClick={() => navigate('/achievements')}>
+        <div
+          style={boxStyle}
+          onClick={() => navigate('/achievements')}
+          onMouseEnter={e => e.currentTarget.style.transform = boxHoverStyle.transform}
+          onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+        >
           Achievements / Daily Motivation
         </div>
       </div>
-      <div style={progressWrapperStyle}>
-        <div style={progressTextStyle}>
-          Progress: You're crushing it!
-        </div>
-        <div style={progressContainerStyle}>
-          <div style={progressBarStyle}></div>
-        </div>
-      </div>
+      {/* Progress bar section removed */}
     </div>
   );
 }

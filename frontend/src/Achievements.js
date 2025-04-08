@@ -1,9 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Achievements() {
+function AchievementPage() {
   const navigate = useNavigate();
-
+  
+  // Sample achievement data
+  const achievements = [
+    "Completed 10 flashcards",
+    "Mastered the Basics",
+    "Achieved 7-day login streak",
+    "Learned 50 new words",
+    "Completed Practice Mode session"
+  ];
+  
+  // Reused styles
   const containerStyle = {
     position: 'relative',
     minHeight: '100vh',
@@ -32,6 +42,53 @@ function Achievements() {
     boxShadow: '0 0 8px rgba(0,0,0,0.2)'
   };
 
+  const progressWrapperStyle = {
+    width: '80%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBottom: '30px'
+  };
+
+  const progressTextStyle = {
+    marginBottom: '10px',
+    fontSize: '1.4em',
+    fontWeight: 'bold',
+    textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+  };
+
+  const progressContainerStyle = {
+    width: '100%',
+    background: '#f0f0f0',
+    borderRadius: '10px',
+    overflow: 'hidden',
+    boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1)',
+  };
+
+  const progressBarStyle = {
+    width: '60%', // Example progress value
+    height: '25px',
+    background: 'linear-gradient(to right, #2575fc, #6a11cb)',
+    borderRadius: '10px 0 0 10px',
+  };
+
+  const cardStyle = {
+    background: '#fff',
+    color: '#2575fc',
+    padding: '15px',
+    borderRadius: '8px',
+    boxShadow: '0 0 10px rgba(0,0,0,0.15)',
+    margin: '10px',
+    minWidth: '250px',
+    textAlign: 'center',
+    transition: 'transform 0.3s',
+    cursor: 'default'
+  };
+
+  const cardHoverStyle = {
+    transform: 'scale(1.05)'
+  };
+
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
@@ -39,10 +96,29 @@ function Achievements() {
           Back to Dashboard
         </button>
       </div>
-      <h1>Achievements / Daily Motivation</h1>
-      <p>Here is the frontend logic for tracking your achievements and daily motivation.</p>
+      <h1>Achievements</h1>
+      <div style={progressWrapperStyle}>
+        <div style={progressTextStyle}>
+          Progress: 60% Complete!
+        </div>
+        <div style={progressContainerStyle}>
+          <div style={progressBarStyle}></div>
+        </div>
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {achievements.map((ach, idx) => (
+          <div
+            key={idx}
+            style={cardStyle}
+            onMouseEnter={e => e.currentTarget.style.transform = cardHoverStyle.transform}
+            onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+          >
+            {ach}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
-export default Achievements;
+export default AchievementPage;

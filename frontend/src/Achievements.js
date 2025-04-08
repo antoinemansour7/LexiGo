@@ -73,20 +73,21 @@ function AchievementPage() {
   };
 
   const cardStyle = {
-    background: '#fff',
-    color: '#2575fc',
-    padding: '15px',
-    borderRadius: '8px',
-    boxShadow: '0 0 10px rgba(0,0,0,0.15)',
-    margin: '10px',
-    minWidth: '250px',
+    background: 'linear-gradient(135deg, #ffffff, #e6e6ff)',
+    color: '#4a00e0',
+    padding: '20px 30px',
+    borderRadius: '12px',
+    border: '2px solid #4a00e0',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+    margin: '15px',
+    minWidth: '280px',
     textAlign: 'center',
-    transition: 'transform 0.3s',
-    cursor: 'default'
+    transition: 'transform 0.3s, box-shadow 0.3s'
   };
 
   const cardHoverStyle = {
-    transform: 'scale(1.05)'
+    transform: 'scale(1.07)',
+    boxShadow: '0 6px 18px rgba(0,0,0,0.3)'
   };
 
   return (

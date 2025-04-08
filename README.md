@@ -2,12 +2,18 @@
 
 LexiGO is a language learning application that helps users improve their vocabulary through interactive features such as flashcards, quizzes, and personalized word lists. The app offers:
 
-- **Login Page:** Secure authentication for user access.
-- **Dashboard:** Central hub to navigate to different features.
-- **My Words:** Add and review your vocabulary words.
-- **Practice Mode:** Engage in interactive flashcards to reinforce learning.
-- **Flashcards / Quizzes:** Test your knowledge with multiple-choice quizzes.
-- **Achievements / Daily Motivation:** Track milestones and get inspired daily.
+- **Login Page:** Secure authentication for user access.  
+  ![Login Page Screenshot](path/to/login-screenshot.jpg)
+- **Dashboard:** Central hub to navigate to different features.  
+  ![Dashboard Screenshot](path/to/dashboard-screenshot.jpg)
+- **My Words:** Add and review your vocabulary words.  
+  ![My Words Screenshot](path/to/mywords-screenshot.jpg)
+- **Practice Mode:** Engage in interactive flashcards to reinforce learning.  
+  ![Practice Mode Screenshot](path/to/practicemode-screenshot.jpg)
+- **Flashcards / Quizzes:** Test your knowledge with multiple-choice quizzes.  
+  ![Flashcards / Quizzes Screenshot](path/to/flashcardsquizzes-screenshot.jpg)
+- **Achievements / Daily Motivation:** Track milestones and get inspired daily.  
+  ![Achievements Screenshot](path/to/achievements-screenshot.jpg)
 
 ## Getting Started
 

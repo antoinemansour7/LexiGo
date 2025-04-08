@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function MyWords() {
   const navigate = useNavigate();
+  const [newWord, setNewWord] = useState('');
+  const [words, setWords] = useState([]);
 
   const containerStyle = {
     position: 'relative',
@@ -29,7 +31,34 @@ function MyWords() {
     padding: '8px 12px',
     cursor: 'pointer',
     fontWeight: 'bold',
-    boxShadow: '0 0 8px rgba(0,0,0,0.2)'
+    boxShadow: '0 0 8px rgba(0,0,0,0.2)',
+    marginLeft: '10px'
+  };
+
+  const inputStyle = {
+    padding: '10px',
+    fontSize: '1em',
+    borderRadius: '4px',
+    border: 'none',
+    marginRight: '10px'
+  };
+
+  const wordCardStyle = {
+    background: '#fff',
+    color: '#2575fc',
+    padding: '10px 15px',
+    borderRadius: '8px',
+    boxShadow: '0 0 10px rgba(0,0,0,0.15)',
+    margin: '10px',
+    fontWeight: 'bold'
+  };
+
+  const addWord = (e) => {
+    e.preventDefault();
+    if (newWord.trim()) {
+      setWords([...words, newWord.trim()]);
+      setNewWord('');
+    }
   };
 
   return (
@@ -40,7 +69,26 @@ function MyWords() {
         </button>
       </div>
       <h1>My Words</h1>
-      <p>Here is the frontend logic for displaying your words.</p>
+     
+      {/* New word input form */}
+      <form onSubmit={addWord} style={{ marginBottom: '30px' }}>
+        <input 
+          type="text" 
+          placeholder="Enter a word" 
+          value={newWord}
+          onChange={(e) => setNewWord(e.target.value)}
+          style={inputStyle}
+        />
+        <button type="submit" style={buttonStyle}>Add Word</button>
+      </form>
+      {/* Display added words */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {words.map((word, index) => (
+          <div key={index} style={wordCardStyle}>
+            {word}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
